@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Password Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A simple password generator to create secure passwords without sending them across the Internet.">
+    <meta name="keywords" content="password generator,online password generator, random password generator, secure password generator">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .range-bubble {
+            background: var(--bs-primary);
+            color: white;
+            padding: 4px 12px;
+            position: absolute;
+            border-radius: 4px;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Password Generator</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <div class="form-group mb-3">
+                                <label for="password-length">Password length</label>
+                                <div class="position-relative pb-3">
+                                    <input type="range" id="password-length" class="form-range" value="16" min="6" max="64" step="1">
+                                    <output class="range-bubble"></output>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <div class="form-check form-switch">
+                                    <input type="checkbox" id="include-symbols" class="form-check-input" checked>
+                                    <label for="include-symbols" class="form-check-label">Include Symbols</label>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <div class="form-check form-switch">
+                                    <input type="checkbox" id="include-numbers" class="form-check-input" checked>
+                                    <label for="include-numbers" class="form-check-label">Include Numbers</label>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <div class="form-check form-switch">
+                                    <input type="checkbox" id="include-lowercase" class="form-check-input" checked>
+                                    <label for="include-lowercase" class="form-check-label">Include Lowercase Characters</label>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <div class="form-check form-switch">
+                                    <input type="checkbox" id="include-uppercase" class="form-check-input" checked>
+                                    <label for="include-uppercase" class="form-check-label">Include Uppercase Characters</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="text" name="password" id="password" placeholder="Create password" readonly="">
+                        </div>
+                        <p><strong>We do not store any generated passwords.</strong></p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" onclick="generatePw()">Generate</button>
+                        <button class="btn btn-primary" onclick="copyPw()">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/password-generator.min.js"></script>
+    <script src="js/script.min.js"></script>
+</body>
+</html>
